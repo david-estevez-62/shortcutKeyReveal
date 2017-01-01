@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+  </head>
+  <body>
+
+  <script type="text/javascript">
+var map = [];
+
+
+
+  window.onload = function() {
+
+    document.addEventListener('keydown', function(event) {
+
+        var index = map.indexOf(event.keyCode);
+
+        if(index == -1){
+          map.push(event.keyCode)
+
+          console.log(map)
+        }
+
+        // if(map.indexOf(70) > -1 && map.indexOf(17) > -1){
+        //   loop = setInterval(timeLoop, 1000);
+        // }
+
+        
+    }, false);
+
+    document.addEventListener('keyup', function(event) {
+        var index = map.indexOf(event.keyCode);
+
+        if(index > -1){
+          map.splice(index, 1);
+
+          console.log(map)
+        }
+
+        // if(map.indexOf(70) == -1 || map.indexOf(17) == -1){
+          
+        // }
+
+    }, false);
+
+
+
+  }
+
+
+function timeLoop(){
+        if(map.indexOf(70) > -1 && map.indexOf(17) > -1){
+          console.log(map)
+        }else if(map.indexOf(70) == -1 || map.indexOf(17) == -1){
+          console.log('do nothing')
+          // clearInterval(loop)
+        }
+  }
+
+var loop = setInterval(timeLoop, 1000);
+  
+  </script>
+  </body>
+</html>
